@@ -32,15 +32,6 @@ class JokeInput(BaseModel):
     friend: str
 
 
-# @app.post("/")
-# def create_joke(joke_input: JokeInput):
-#     return joke_input.friend + " tells his joke:" + pyjokes.get_joke()
-
-
-# @app.post("/")
-# def create_joke(joke_input: JokeInput):
-#     return Joke(friend=joke_input.friend, joke=pyjokes.get_joke())
-#
 
 @app.post("/", response_model=Joke)
 def create_joke(joke_input: JokeInput):
